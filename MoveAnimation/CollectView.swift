@@ -37,7 +37,7 @@ class CollectView: UIView {
         imageView.frame = self.bounds
     }
     
-    func show(inView view:UIView,action:(() -> ())) {
+    func show(inView view:UIView,action:(() -> ())?) {
         self.action = action
         view.addSubview(self)
     }

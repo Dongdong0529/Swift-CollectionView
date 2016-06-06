@@ -35,6 +35,10 @@ class RootViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.whiteColor()
         self.view.addSubview(collectionView)
+        
+        CollectView.sharedManage.show(inView: (self.navigationController?.view)!, action: {()->() in
+            print("我被点击了")
+        })
     }
 }
 

@@ -39,6 +39,8 @@ class RootViewController: UIViewController {
         CollectView.sharedManage.show(inView: (self.navigationController?.view)!, action: {()->() in
             print("我被点击了")
         })
+        
+        print("测试合并分支")
     }
 }
 

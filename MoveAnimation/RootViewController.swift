@@ -42,6 +42,7 @@ class RootViewController: UIViewController {
         
         print("测试合并分支")
         print("master")
+        print("testBranch")
     }
 }
 

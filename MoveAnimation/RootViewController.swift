@@ -80,6 +80,8 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        
+        PopupAnimationView .show("收藏成功", inView: self.view, yOffset: 64, delay: 1) { 
+            
+        }
     }
 }

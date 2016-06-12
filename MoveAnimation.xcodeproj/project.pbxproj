@@ -11,6 +11,7 @@
 		AA1B20B31D0509140098629E /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1B20B21D0509140098629E /* CollectionViewCell.swift */; };
 		AA1B20B51D050AAB0098629E /* CollectionViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1B20B41D050AAB0098629E /* CollectionViewHeaderView.swift */; };
 		AA1B20B71D054C490098629E /* CollectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1B20B61D054C490098629E /* CollectView.swift */; };
+		AA1B20C01D0D32930098629E /* PopupAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1B20BF1D0D32930098629E /* PopupAnimationView.swift */; };
 		AAF794F61D0036BE00A94F8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF794F51D0036BE00A94F8F /* AppDelegate.swift */; };
 		AAF794F81D0036BE00A94F8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAF794F71D0036BE00A94F8F /* Assets.xcassets */; };
 		AAF794FB1D0036BE00A94F8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAF794F91D0036BE00A94F8F /* LaunchScreen.storyboard */; };
@@ -41,6 +42,7 @@
 		AA1B20B21D0509140098629E /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		AA1B20B41D050AAB0098629E /* CollectionViewHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewHeaderView.swift; sourceTree = "<group>"; };
 		AA1B20B61D054C490098629E /* CollectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectView.swift; sourceTree = "<group>"; };
+		AA1B20BF1D0D32930098629E /* PopupAnimationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupAnimationView.swift; sourceTree = "<group>"; };
 		AAF794F21D0036BE00A94F8F /* MoveAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoveAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAF794F51D0036BE00A94F8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAF794F71D0036BE00A94F8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				AAF794F51D0036BE00A94F8F /* AppDelegate.swift */,
 				AAF7951E1D0036D800A94F8F /* RootViewController.swift */,
 				AA1B20B21D0509140098629E /* CollectionViewCell.swift */,
+				AA1B20BF1D0D32930098629E /* PopupAnimationView.swift */,
 				AA1B20B41D050AAB0098629E /* CollectionViewHeaderView.swift */,
 				AA1B20B61D054C490098629E /* CollectView.swift */,
 				AA1B20AE1D016D570098629E /* MyView.swift */,
@@ -268,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA1B20AF1D016D570098629E /* MyView.swift in Sources */,
+				AA1B20C01D0D32930098629E /* PopupAnimationView.swift in Sources */,
 				AAF7951F1D0036D800A94F8F /* RootViewController.swift in Sources */,
 				AA1B20B31D0509140098629E /* CollectionViewCell.swift in Sources */,
 				AA1B20B51D050AAB0098629E /* CollectionViewHeaderView.swift in Sources */,

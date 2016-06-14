@@ -36,7 +36,7 @@ class RootViewController: UIViewController {
         self.view.backgroundColor = UIColor.whiteColor()
         self.view.addSubview(collectionView)
         
-        CollectView.sharedManage.show(inView: (self.navigationController?.view)!, action: {()->() in
+        CollectView.sharedManage.show(inView: self.view, action: {()->() in
             print("我被点击了")
             self.navigationController?.pushViewController(NextViewController(), animated: true)
         })
@@ -50,7 +50,7 @@ extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
+        return 10
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3CE7D3143A77FFD6967452CD /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8C3BDA248A7D0F94DD63DBF /* Pods.framework */; };
+		AA0E569A1D0FEA250019524A /* PresentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0E56991D0FEA250019524A /* PresentViewController.swift */; };
+		AA0E569C1D0FEDF60019524A /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0E569B1D0FEDF60019524A /* Animation.swift */; };
+		AA0E569E1D1001840019524A /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0E569D1D1001840019524A /* Singleton.swift */; };
 		AA1B20AF1D016D570098629E /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1B20AE1D016D570098629E /* MyView.swift */; };
 		AA1B20B31D0509140098629E /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1B20B21D0509140098629E /* CollectionViewCell.swift */; };
 		AA1B20B51D050AAB0098629E /* CollectionViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1B20B41D050AAB0098629E /* CollectionViewHeaderView.swift */; };
@@ -41,6 +44,9 @@
 
 /* Begin PBXFileReference section */
 		6761F8C291F10BEAF1ECDCAE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		AA0E56991D0FEA250019524A /* PresentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentViewController.swift; sourceTree = "<group>"; };
+		AA0E569B1D0FEDF60019524A /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		AA0E569D1D1001840019524A /* Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		AA1B20AE1D016D570098629E /* MyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
 		AA1B20B21D0509140098629E /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		AA1B20B41D050AAB0098629E /* CollectionViewHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewHeaderView.swift; sourceTree = "<group>"; };
@@ -125,10 +131,13 @@
 				AAF794F51D0036BE00A94F8F /* AppDelegate.swift */,
 				AA1B20C11D0D67D70098629E /* NextViewController.swift */,
 				AAF7951E1D0036D800A94F8F /* RootViewController.swift */,
+				AA0E569B1D0FEDF60019524A /* Animation.swift */,
+				AA0E56991D0FEA250019524A /* PresentViewController.swift */,
 				AA1B20B21D0509140098629E /* CollectionViewCell.swift */,
 				AA1B20BF1D0D32930098629E /* PopupAnimationView.swift */,
 				AA1B20B41D050AAB0098629E /* CollectionViewHeaderView.swift */,
 				AA1B20B61D054C490098629E /* CollectView.swift */,
+				AA0E569D1D1001840019524A /* Singleton.swift */,
 				AA1B20AE1D016D570098629E /* MyView.swift */,
 				AAF794F71D0036BE00A94F8F /* Assets.xcassets */,
 				AAF794F91D0036BE00A94F8F /* LaunchScreen.storyboard */,
@@ -353,8 +362,11 @@
 				AA1B20C01D0D32930098629E /* PopupAnimationView.swift in Sources */,
 				AAF7951F1D0036D800A94F8F /* RootViewController.swift in Sources */,
 				AA1B20B31D0509140098629E /* CollectionViewCell.swift in Sources */,
+				AA0E569A1D0FEA250019524A /* PresentViewController.swift in Sources */,
+				AA0E569E1D1001840019524A /* Singleton.swift in Sources */,
 				AA1B20B51D050AAB0098629E /* CollectionViewHeaderView.swift in Sources */,
 				AAF794F61D0036BE00A94F8F /* AppDelegate.swift in Sources */,
+				AA0E569C1D0FEDF60019524A /* Animation.swift in Sources */,
 				AA1B20B71D054C490098629E /* CollectView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

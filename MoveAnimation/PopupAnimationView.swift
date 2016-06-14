@@ -44,10 +44,10 @@ class PopupAnimationView: UIView {
         self.frame = CGRectMake(0, yOffset, UIScreen.mainScreen().bounds.size.width, 30)
         completion = handler
         contentLabel.text = message
-        UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .LayoutSubviews, animations: {
+        UIView.animateWithDuration(0.1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .LayoutSubviews, animations: {
             self.contentLabel.transform = CGAffineTransformMakeScale(1.2, 1.2)
             }) { (finished) in
-                UIView.animateWithDuration(0.2, delay: 0, options: .LayoutSubviews, animations: { 
+                UIView.animateWithDuration(0.1, delay: 0, options: .LayoutSubviews, animations: {
                     self.contentLabel.transform = CGAffineTransformIdentity
                     }, completion: { (finished) in
                         

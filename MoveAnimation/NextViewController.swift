@@ -12,6 +12,7 @@ import EZSwiftExtensions
 
 class NextViewController: UIViewController {
     var aView: UIView?
+    let transition = Animation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,22 @@ class NextViewController: UIViewController {
     
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        aView?.shakeViewForTimes(3)
+//        aView?.shakeViewForTimes(3)
+        let present = PresentViewController()
+        present.transitioningDelegate = self
+        self.presentViewController(present, animated: true, completion: nil)
+    }
+}
+
+extension NextViewController: UIViewControllerTransitioningDelegate {
+    
+    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.presenting = true
+        return transition
+    }
+    
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.presenting = false
+        return transition
     }
 }

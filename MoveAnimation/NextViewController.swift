@@ -8,7 +8,6 @@
 //
 
 import UIKit
-import EZSwiftExtensions
 
 class NextViewController: UIViewController {
     var aView: UIView?
@@ -16,29 +15,29 @@ class NextViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        aView = UIView(frame: CGRectMake(100, 200, 100, 100))
-        aView?.backgroundColor = UIColor.blueColor()
+        self.view.backgroundColor = UIColor.white()
+        aView = UIView(frame: CGRect(x: 100, y: 200, width: 100, height: 100))
+        aView?.backgroundColor = UIColor.blue()
         self.view.addSubview(aView!)
     }
     
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 //        aView?.shakeViewForTimes(3)
         let present = PresentViewController()
         present.transitioningDelegate = self
-        self.presentViewController(present, animated: true, completion: nil)
+        self.present(present, animated: true, completion: nil)
     }
 }
 
 extension NextViewController: UIViewControllerTransitioningDelegate {
     
-    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func animationController(forPresentedController presented: UIViewController, presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.presenting = true
         return transition
     }
     
-    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func animationController(forDismissedController dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.presenting = false
         return transition
     }

@@ -11,9 +11,9 @@ import UIKit
 class CollectionViewHeaderView: UICollectionReusableView {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.textColor = UIColor.grayColor()
-        label.font = UIFont.systemFontOfSize(14)
-        label.textAlignment = .Left
+        label.textColor = UIColor.gray()
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textAlignment = .left
         return label
     }()
     
@@ -25,10 +25,10 @@ class CollectionViewHeaderView: UICollectionReusableView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.addSubview(titleLabel)
-        self.backgroundColor = UIColor.yellowColor()
+        self.backgroundColor = UIColor.yellow()
     }
     
-    func config(title: String?) {
+    func config(_ title: String?) {
         titleLabel.text = title
     }
     
@@ -39,9 +39,9 @@ class CollectionViewHeaderView: UICollectionReusableView {
     override func layoutSubviews() {
         super.layoutSubviews()
         let x: CGFloat = 15
-        let y: CGFloat = (CGRectGetHeight(bounds) - 14) / 2
+        let y: CGFloat = (bounds.height - 14) / 2
         let width: CGFloat = 200
         let height: CGFloat = 14
-        titleLabel.frame = CGRectMake(x, y, width, height)
+        titleLabel.frame = CGRect(x: x, y: y, width: width, height: height)
     }
 }

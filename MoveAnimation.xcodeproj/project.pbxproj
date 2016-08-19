@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3CE7D3143A77FFD6967452CD /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8C3BDA248A7D0F94DD63DBF /* Pods.framework */; };
 		AA0E569A1D0FEA250019524A /* PresentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0E56991D0FEA250019524A /* PresentViewController.swift */; };
 		AA0E569C1D0FEDF60019524A /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0E569B1D0FEDF60019524A /* Animation.swift */; };
 		AA0E569E1D1001840019524A /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0E569D1D1001840019524A /* Singleton.swift */; };
@@ -20,7 +19,6 @@
 		AAF794F61D0036BE00A94F8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF794F51D0036BE00A94F8F /* AppDelegate.swift */; };
 		AAF794F81D0036BE00A94F8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAF794F71D0036BE00A94F8F /* Assets.xcassets */; };
 		AAF794FB1D0036BE00A94F8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAF794F91D0036BE00A94F8F /* LaunchScreen.storyboard */; };
-		AAF795061D0036BF00A94F8F /* MoveAnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF795051D0036BF00A94F8F /* MoveAnimationTests.swift */; };
 		AAF795111D0036BF00A94F8F /* MoveAnimationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF795101D0036BF00A94F8F /* MoveAnimationUITests.swift */; };
 		AAF7951F1D0036D800A94F8F /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF7951E1D0036D800A94F8F /* RootViewController.swift */; };
 /* End PBXBuildFile section */
@@ -59,7 +57,6 @@
 		AAF794FA1D0036BE00A94F8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AAF794FC1D0036BE00A94F8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAF795011D0036BE00A94F8F /* MoveAnimationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoveAnimationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AAF795051D0036BF00A94F8F /* MoveAnimationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveAnimationTests.swift; sourceTree = "<group>"; };
 		AAF795071D0036BF00A94F8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAF7950C1D0036BF00A94F8F /* MoveAnimationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoveAnimationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAF795101D0036BF00A94F8F /* MoveAnimationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveAnimationUITests.swift; sourceTree = "<group>"; };
@@ -74,7 +71,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CE7D3143A77FFD6967452CD /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,7 +145,6 @@
 		AAF795041D0036BF00A94F8F /* MoveAnimationTests */ = {
 			isa = PBXGroup;
 			children = (
-				AAF795051D0036BF00A94F8F /* MoveAnimationTests.swift */,
 				AAF795071D0036BF00A94F8F /* Info.plist */,
 			);
 			path = MoveAnimationTests;
@@ -180,12 +175,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AAF795151D0036BF00A94F8F /* Build configuration list for PBXNativeTarget "MoveAnimation" */;
 			buildPhases = (
-				8979FA7B0298EE8BA6830CE1 /* Check Pods Manifest.lock */,
 				AAF794EE1D0036BE00A94F8F /* Sources */,
 				AAF794EF1D0036BE00A94F8F /* Frameworks */,
 				AAF794F01D0036BE00A94F8F /* Resources */,
-				E70E7A6AFE9CA13C9B02BEDA /* Embed Pods Frameworks */,
-				B0C5C01CBDA0BC5233A33DA0 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -245,15 +237,18 @@
 					AAF794F11D0036BE00A94F8F = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = KJJM44RE5C;
+						LastSwiftMigration = 0800;
 					};
 					AAF795001D0036BE00A94F8F = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = KJJM44RE5C;
+						LastSwiftMigration = 0800;
 						TestTargetID = AAF794F11D0036BE00A94F8F;
 					};
 					AAF7950B1D0036BF00A94F8F = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = KJJM44RE5C;
+						LastSwiftMigration = 0800;
 						TestTargetID = AAF794F11D0036BE00A94F8F;
 					};
 				};
@@ -304,54 +299,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		8979FA7B0298EE8BA6830CE1 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		B0C5C01CBDA0BC5233A33DA0 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E70E7A6AFE9CA13C9B02BEDA /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		AAF794EE1D0036BE00A94F8F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -375,7 +322,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAF795061D0036BF00A94F8F /* MoveAnimationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,6 +452,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Pingan.MoveAnimation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -518,6 +465,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Pingan.MoveAnimation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -529,6 +477,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Pingan.MoveAnimationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoveAnimation.app/MoveAnimation";
 			};
 			name = Debug;
@@ -541,6 +490,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Pingan.MoveAnimationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoveAnimation.app/MoveAnimation";
 			};
 			name = Release;
@@ -552,6 +502,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Pingan.MoveAnimationUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = MoveAnimation;
 			};
 			name = Debug;
@@ -563,6 +514,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Pingan.MoveAnimationUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = MoveAnimation;
 			};
 			name = Release;

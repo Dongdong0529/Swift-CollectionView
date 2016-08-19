@@ -12,7 +12,7 @@ class CollectView: UIView {
     
     private lazy var imageView: UIImageView = {
         let iv = UIImageView()
-        iv.backgroundColor = UIColor.yellowColor()
+        iv.backgroundColor = UIColor.yellow()
         return iv
     }()
     
@@ -24,7 +24,7 @@ class CollectView: UIView {
     var action:(() -> ())?
     
     override init(frame: CGRect) {
-        super.init(frame: CGRectMake(ScreenWidth - 100, ScreenHeight - 100, 60, 60))
+        super.init(frame: CGRect(x: ScreenWidth - 100, y: ScreenHeight - 100, width: 60, height: 60))
         commonInit()
     }
     
@@ -42,7 +42,7 @@ class CollectView: UIView {
         view.addSubview(self)
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if action != nil {
             action!()
         }

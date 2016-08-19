@@ -11,26 +11,26 @@ import UIKit
 class MyView: UIView {
     
     var v1:UIView = {
-        let v = UIView(frame:CGRectMake(60,100,200,100))
-        v.backgroundColor = UIColor.blueColor()
+        let v = UIView(frame:CGRect(x: 60,y: 100,width: 200,height: 100))
+        v.backgroundColor = UIColor.blue()
         return v
     }()
     
     var v2:UIView = {
-        let v = UIView(frame:CGRectMake(60,250,200,100))
-        v.backgroundColor = UIColor.yellowColor()
+        let v = UIView(frame:CGRect(x: 60,y: 250,width: 200,height: 100))
+        v.backgroundColor = UIColor.yellow()
         return v
     }()
     
     var v3:UIView = {
-        let v = UIView(frame:CGRectMake(60,10,50,50))
-        v.backgroundColor = UIColor.orangeColor()
+        let v = UIView(frame:CGRect(x: 60,y: 10,width: 50,height: 50))
+        v.backgroundColor = UIColor.orange()
         return v
     }()
     
     var v4:UIView = {
-        let v = UIView(frame:CGRectMake(270,100,10,200))
-        v.backgroundColor = UIColor.orangeColor()
+        let v = UIView(frame:CGRect(x: 270,y: 100,width: 10,height: 200))
+        v.backgroundColor = UIColor.orange()
         return v
     }()
     
@@ -60,59 +60,59 @@ class MyView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func panPressAction(sender:UIPanGestureRecognizer) {
+    func panPressAction(_ sender:UIPanGestureRecognizer) {
         if newView == nil {
             return
         }
         switch sender.state {
-        case .Began, .Cancelled, .Failed:
+        case .began, .cancelled, .failed:
             print("")
-        case .Changed:
-            let point = sender.locationInView(self)
+        case .changed:
+            let point = sender.location(in: self)
             if lastPoint1 == nil {
                 lastPoint1 = point
             }
             let deltaX = point.x - lastPoint1!.x
             if point.x > 300 || point.x < 270 {
-                sender.enabled = false
+                sender.isEnabled = false
             }
             
             print(point.x)
             
-            v4.frame = CGRect(origin: CGPointMake(v4.frame.origin.x + deltaX, v4.frame.origin.y),size: v4.frame.size)
-            newView!.frame = CGRect(origin: CGPointMake(newView!.frame.origin.x, newView!.frame.origin.y),size: CGSizeMake(newView!.frame.size.width + deltaX, newView!.frame.size.height))
+            v4.frame = CGRect(origin: CGPoint(x: v4.frame.origin.x + deltaX, y: v4.frame.origin.y),size: v4.frame.size)
+            newView!.frame = CGRect(origin: CGPoint(x: newView!.frame.origin.x, y: newView!.frame.origin.y),size: CGSize(width: newView!.frame.size.width + deltaX, height: newView!.frame.size.height))
             lastPoint = point
             
-        case .Ended:
+        case .ended:
             lastPoint1 = nil
-            sender.enabled = true
+            sender.isEnabled = true
         default:
             break
         }
     }
     
-    func longPressAction(ges:UILongPressGestureRecognizer) {
+    func longPressAction(_ ges:UILongPressGestureRecognizer) {
         switch ges.state {
-        case .Began:
-            tempMove = v3.snapshotViewAfterScreenUpdates(false)
+        case .began:
+            tempMove = v3.snapshotView(afterScreenUpdates: false)
             tempMove?.frame = v3.frame
-            tempMove?.transform = CGAffineTransformMakeScale(1.3, 1.3)
+            tempMove?.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
             v2.addSubview(tempMove!)
-        case .Changed:
-            let point = ges.locationInView(self)
+        case .changed:
+            let point = ges.location(in: self)
             if lastPoint == nil {
                 lastPoint = point
             }
             let deltaX = point.x - lastPoint!.x
             let deltaY = point.y - lastPoint!.y
             
-            tempMove?.frame = CGRect(origin: CGPointMake(tempMove!.frame.origin.x + deltaX, tempMove!.frame.origin.y + deltaY),size: v3.frame.size)
+            tempMove?.frame = CGRect(origin: CGPoint(x: tempMove!.frame.origin.x + deltaX, y: tempMove!.frame.origin.y + deltaY),size: v3.frame.size)
             lastPoint = point
             
-        case .Ended:
-            tempMove?.transform = CGAffineTransformMakeScale(1, 1)
+        case .ended:
+            tempMove?.transform = CGAffineTransform(scaleX: 1, y: 1)
             buildNewView()
-        case .Cancelled, .Failed:
+        case .cancelled, .failed:
             print("")
         default:
             break
@@ -123,11 +123,11 @@ class MyView: UIView {
         let v:UIView = UIView(frame:v3.frame)
         v.backgroundColor = v3.backgroundColor
         v2.addSubview(v);
-        v2.sendSubviewToBack(v)
+        v2.sendSubview(toBack: v)
     }
     
     func buildNewView() {
-        let rect = v1.convertRect(tempMove!.frame, fromView: v2)
+        let rect = v1.convert(tempMove!.frame, from: v2)
         let v:UIView = UIView(frame:rect)
         v.backgroundColor = v3.backgroundColor
         newView = v
@@ -138,15 +138,15 @@ class MyView: UIView {
     }
     
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        print("begin")
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("begin123123131312")
     }
     
-    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         
     }
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         print("ended")
     }
 }

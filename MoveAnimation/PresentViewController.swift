@@ -12,14 +12,14 @@ class PresentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.yellowColor()
+        self.view.backgroundColor = UIColor.yellow()
         
         
         let gesture = UITapGestureRecognizer(target: self, action: #selector(PresentViewController.dismiss(_:)))
         self.view.addGestureRecognizer(gesture)
     }
     
-    func dismiss(sender: UITapGestureRecognizer) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    func dismiss(_ sender: UITapGestureRecognizer) {
+        self.dismiss(animated: true, completion: nil)
     }
 }

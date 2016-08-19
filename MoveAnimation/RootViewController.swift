@@ -11,8 +11,8 @@ import UIKit
 private let cellReuseIdentifier = "CollectionViewCell"
 private let headReuseIdentifier = "CollectionViewHeaderView"
 
-public let ScreenWidth = UIScreen.mainScreen().bounds.size.width
-public let ScreenHeight = UIScreen.mainScreen().bounds.size.height
+public let ScreenWidth = UIScreen.main().bounds.size.width
+public let ScreenHeight = UIScreen.main().bounds.size.height
 
 class RootViewController: UIViewController {
     
@@ -20,65 +20,68 @@ class RootViewController: UIViewController {
         let f = UICollectionViewFlowLayout()
         f.minimumLineSpacing = 2
         f.minimumInteritemSpacing = 2
-        f.scrollDirection = .Vertical
-        
+        f.scrollDirection = .vertical
+
         let c:UICollectionView = UICollectionView(frame:self.view.bounds, collectionViewLayout: f)
-        c.backgroundColor = UIColor.whiteColor()
+        c.backgroundColor = UIColor.white()
         c.delegate = self
         c.dataSource = self
-        c.registerClass(CollectionViewCell.self, forCellWithReuseIdentifier: cellReuseIdentifier)
-        c.registerClass(CollectionViewHeaderView.self, forSupplementaryViewOfKind:UICollectionElementKindSectionHeader, withReuseIdentifier: headReuseIdentifier)
+        c.register(CollectionViewCell.self, forCellWithReuseIdentifier: cellReuseIdentifier)
+        c.register(CollectionViewHeaderView.self, forSupplementaryViewOfKind:UICollectionElementKindSectionHeader, withReuseIdentifier: headReuseIdentifier)
         return c
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.whiteColor()
+        self.view.backgroundColor = UIColor.white()
         self.view.addSubview(collectionView)
         
         CollectView.sharedManage.show(inView: self.view, action: {()->() in
             print("我被点击了")
             self.navigationController?.pushViewController(NextViewController(), animated: true)
         })
+        
+        print("file:\(#file),line:\(#line),column:\(#column),function:\(#function)")
+        Util.instance1.test()
     }
 }
 
 extension RootViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell: CollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier(cellReuseIdentifier, forIndexPath: indexPath) as! CollectionViewCell
-        cell.config("CollectionViewCell\(indexPath.item)")
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: CollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier, for: indexPath) as! CollectionViewCell
+        cell.config("CollectionViewCell\((indexPath as NSIndexPath).item)")
         return cell
     }
     
-    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
-        let head: CollectionViewHeaderView = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: headReuseIdentifier, forIndexPath: indexPath) as! CollectionViewHeaderView
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let head: CollectionViewHeaderView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headReuseIdentifier, for: indexPath) as! CollectionViewHeaderView
         head.config("Header:CollectionViewCell")
         return head
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSizeMake(ScreenWidth, 44)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: ScreenWidth, height: 44)
     }
     
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSizeMake((ScreenWidth - 8) / 3, 44)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: (ScreenWidth - 8) / 3, height: 44)
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsetsMake(0, 2, 0, 2)
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         PopupAnimationView .show("收藏成功", inView: self.view, yOffset: 64, delay: 1) { 
             
         }

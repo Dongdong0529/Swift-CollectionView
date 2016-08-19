@@ -12,10 +12,10 @@ class CollectionViewCell: UICollectionViewCell {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.textColor = UIColor.grayColor()
-        label.font = UIFont.systemFontOfSize(14)
+        label.textColor = UIColor.gray()
+        label.font = UIFont.systemFont(ofSize: 14)
         label.adjustsFontSizeToFitWidth = true
-        label.textAlignment = .Center
+        label.textAlignment = .center
         return label
     }()
     
@@ -27,10 +27,10 @@ class CollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.contentView.addSubview(titleLabel)
-        self.backgroundColor = UIColor.lightGrayColor()
+        self.backgroundColor = UIColor.lightGray()
     }
     
-    func config(title: String?) {
+    func config(_ title: String?) {
         titleLabel.text = title
     }
     
@@ -40,8 +40,8 @@ class CollectionViewCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        let width: CGFloat = CGRectGetWidth(bounds)
-        let height: CGFloat = CGRectGetHeight(bounds)
-        titleLabel.frame = CGRectMake(0, 0, width, height)
+        let width: CGFloat = bounds.width
+        let height: CGFloat = bounds.height
+        titleLabel.frame = CGRect(x: 0, y: 0, width: width, height: height)
     }
 }

@@ -15,33 +15,33 @@ class Animation: NSObject, UIViewControllerAnimatedTransitioning {
     var originFrame = CGRect.zero
     var hideImage:(()->())?
     
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
+    func transitionDuration(_ transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return duration
     }
     
-    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+    func animateTransition(_ transitionContext: UIViewControllerContextTransitioning) {
         let containerView = transitionContext.containerView()
-        let toView = transitionContext.viewForKey(UITransitionContextToViewKey)
-        let detailView = presenting ? toView : transitionContext.viewForKey(UITransitionContextFromViewKey)!
+        let toView = transitionContext.view(forKey: UITransitionContextToViewKey)
+        let detailView = presenting ? toView : transitionContext.view(forKey: UITransitionContextFromViewKey)!
         let initialFram = presenting ? originFrame : detailView!.frame
         let finalFrame = presenting ? detailView!.frame : originFrame
         
-        let xScaleFactor = presenting ? initialFram.width / finalFrame.width : finalFrame.width / initialFram.w
+        let xScaleFactor = presenting ? initialFram.width / finalFrame.width : finalFrame.width / initialFram.width
         let yScaleFactor = presenting ? initialFram.height / finalFrame.height : finalFrame.height / initialFram.height
-        let scaleTransform = CGAffineTransformMakeScale(xScaleFactor, yScaleFactor)
+        let scaleTransform = CGAffineTransform(scaleX: xScaleFactor, y: yScaleFactor)
         
         if presenting {
             detailView?.transform = scaleTransform
-            detailView?.center = CGPoint(x: CGRectGetMidX(initialFram), y: CGRectGetMidY(initialFram))
+            detailView?.center = CGPoint(x: initialFram.midX, y: initialFram.midY)
             detailView?.clipsToBounds = true
         }
         
-        containerView!.addSubview(toView!)
-        containerView?.bringSubviewToFront(detailView!)
+        containerView.addSubview(toView!)
+        containerView.bringSubview(toFront: detailView!)
         
-        UIView.animateWithDuration(duration, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: .AllowAnimatedContent, animations: { 
-            detailView?.transform = self.presenting ? CGAffineTransformIdentity : scaleTransform
-            detailView?.center = CGPoint(x: CGRectGetMidX(finalFrame), y: CGRectGetMidY(finalFrame))
+        UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: .allowAnimatedContent, animations: { 
+            detailView?.transform = self.presenting ? CGAffineTransform.identity : scaleTransform
+            detailView?.center = CGPoint(x: finalFrame.midX, y: finalFrame.midY)
             }) { (_) in
                 if !self.presenting {
                     self.hideImage?()
